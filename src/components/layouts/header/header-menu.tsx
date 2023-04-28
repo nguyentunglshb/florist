@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import { NavigationPath } from "@/models";
 import { HeaderItem } from ".";
+import { ButtonWhiteDefault } from "@/components";
 
 const headerMenu: HeaderItem[] = [
   {
@@ -9,16 +10,12 @@ const headerMenu: HeaderItem[] = [
     path: NavigationPath.HOME,
   },
   {
-    label: "Red rose",
-    path: NavigationPath.RED_ROSE,
+    label: "About Us",
+    path: NavigationPath.ABOUT_US,
   },
   {
-    label: "Lotus",
-    path: NavigationPath.LOTUS,
-  },
-  {
-    label: "Jasmine",
-    path: NavigationPath.JASMINE,
+    label: "Planters",
+    path: NavigationPath.PLANTERS,
   },
   {
     label: "Contact",
@@ -28,22 +25,24 @@ const headerMenu: HeaderItem[] = [
 
 export const HeaderMenu = () => {
   return (
-    <div className="flex">
+    <div className="flex space-x-14 items-center">
       {headerMenu.map(({ label, path }) => {
         return (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }) =>
-              isActive
-                ? "block opacity-100 font-medium"
-                : "block opacity-50 font-normal"
-            }
-          >
-            <p className="text-[#515151] text-lg px-7">{label}</p>
-          </NavLink>
+          <div key={path}>
+            <NavLink
+              to={path}
+              className={({ isActive }) =>
+                isActive ? "block border-b border-white border-solid" : "block"
+              }
+            >
+              <p className="font-medium text-white text-lg py-1">{label}</p>
+            </NavLink>
+          </div>
         );
       })}
+      <ButtonWhiteDefault className="px-12">
+        <p className="text-white font-bold text-base">Call us</p>
+      </ButtonWhiteDefault>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import {
   mask,
   tulip,
 } from "@/assets";
-import { BaseButton, CollapseDescription } from "@/components";
+import { ButtonWhiteDefault, CollapseDescription } from "@/components";
 
 export const FlowerDetailPage = () => {
   return (
@@ -24,9 +24,9 @@ export const FlowerDetailPage = () => {
           </div>
 
           <div className="flex items-center space-x-10">
-            <BaseButton>
+            <ButtonWhiteDefault>
               <p className="text-white text-sm">Add to Cart</p>
-            </BaseButton>
+            </ButtonWhiteDefault>
 
             <div>
               <IconHeart />

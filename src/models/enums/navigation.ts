@@ -1,8 +1,7 @@
 export enum NavigationPath {
   HOME = "/",
-  RED_ROSE = "/red-rose",
-  LOTUS = "/lotus",
-  JASMINE = "/jasmine",
+  ABOUT_US = "/about-us",
+  PLANTERS = "/planters",
   CONTACT = "/contact",
 
   FAVOURITE = "/favourite",

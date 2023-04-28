@@ -9,3 +9,21 @@ export * from "./icon-plus";
 export * from "./icon-arrow-left";
 
 export * from "./icon-arrow-right";
+
+export * from "./icon-play-white";
+
+export * from "./icon-indoor";
+
+export * from "./icon-outdoor";
+
+export * from "./icon-pot";
+
+export * from "./icon-heart-filled";
+
+export * from "./icon-quanlity";
+
+export * from "./icon-grow";
+
+export * from "./icon-temperature";
+
+export * from "./icon-scissors";
