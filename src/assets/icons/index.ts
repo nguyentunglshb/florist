@@ -27,3 +27,15 @@ export * from "./icon-grow";
 export * from "./icon-temperature";
 
 export * from "./icon-scissors";
+
+export * from "./icon-calendar";
+
+export * from "./icon-monstera";
+
+export * from "./icon-fern";
+
+export * from "./icon-insta";
+
+export * from "./icon-facebook";
+
+export * from "./icon-twitter";

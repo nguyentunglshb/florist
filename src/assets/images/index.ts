@@ -16,24 +16,28 @@ import reviewMask1 from "./review-mask1.png";
 import reviewMask2 from "./review-mask2.png";
 import reviewMask3 from "./review-mask3.png";
 import bgReceiveNotification from "./bg-receive-notification.png";
+import blog from "./blog.png";
+import flower2 from "./flower2.png";
 
 export {
-  bgBottom,
-  bgRight,
-  bgTakecare,
-  tulip,
-  mask,
-  bg1,
-  bg2,
-  flower,
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  avatar,
-  reviewMask1,
-  reviewMask2,
-  reviewMask3,
-  bgReceiveNotification,
+	bgBottom,
+	bgRight,
+	bgTakecare,
+	tulip,
+	mask,
+	bg1,
+	bg2,
+	flower,
+	gallery1,
+	gallery2,
+	gallery3,
+	gallery4,
+	gallery5,
+	avatar,
+	reviewMask1,
+	reviewMask2,
+	reviewMask3,
+	bgReceiveNotification,
+	blog,
+	flower2,
 };
