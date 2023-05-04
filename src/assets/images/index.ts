@@ -16,11 +16,14 @@ import reviewMask1 from "./review-mask1.png";
 import reviewMask2 from "./review-mask2.png";
 import reviewMask3 from "./review-mask3.png";
 import bgReceiveNotification from "./bg-receive-notification.png";
+import bgShopping from "./bg-shopping.jpg";
 
 export {
   bgBottom,
   bgRight,
   bgTakecare,
+  bgReceiveNotification,
+  bgShopping,
   tulip,
   mask,
   bg1,
@@ -35,5 +38,4 @@ export {
   reviewMask1,
   reviewMask2,
   reviewMask3,
-  bgReceiveNotification,
 };

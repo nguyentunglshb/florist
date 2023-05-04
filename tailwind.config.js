@@ -7,6 +7,9 @@ export default {
       primaryDark: "#285A43",
       defaultText: "#121212",
       white: "white",
+      "grey.500": "#e9e9e9",
+      "grey.300": "#f6f6f6",
+      "grey.200": "#d9d9d9",
     },
     extend: {
       screens: {
