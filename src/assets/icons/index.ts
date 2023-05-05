@@ -39,3 +39,9 @@ export * from "./icon-insta";
 export * from "./icon-facebook";
 
 export * from "./icon-twitter";
+
+export * from "./icon-close-circle";
+
+export * from "./icon-eye-off";
+
+export * from "./icon-eye-on";

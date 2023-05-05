@@ -5,6 +5,9 @@ export enum NavigationPath {
   CONTACT = "/contact",
 
   FAVOURITE = "/favourite",
-  PERSONAL = "/personal",
+  PROFILE = "/profile",
   CART = "/cart",
+  ORDER_TRACKING = "/order-tracking",
+  CHECK_OUT = "/checkout",
+  WISHLIST = "/wish-list",
 }

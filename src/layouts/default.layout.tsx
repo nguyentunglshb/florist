@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
 
-import { Footer, Header } from "@/components";
+import { Footer, Header, Navbar } from "@/components";
 
 export const DefaultLayout = () => {
-	return (
-		<div className="w-full">
-			<Header />
-			<Outlet />
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="w-full">
+      <Header />
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
 };

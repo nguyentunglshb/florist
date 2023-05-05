@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-export const Protected = () => {
-  const isLoggedIn = true;
+import { getStoredAuth } from "@/helpers";
 
-  return isLoggedIn ? <Outlet /> : <Navigate to={"/"} />;
+export const Protected = () => {
+  return getStoredAuth() ? <Outlet /> : <Navigate to={"/"} />;
 };

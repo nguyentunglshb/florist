@@ -7,25 +7,21 @@ export const TableBody = <T, K extends keyof T>(
 
   const rows = data.map((row, index1) => {
     return (
-      <tbody>
-        <tr
-          key={index1}
-          className="border-collapse border border-solid border-[#e8e8e8]"
-        >
-          {hasCloseIcon && <td>Close Icon</td>}
-          {columns.map((col, index2) => {
-            return (
-              <td key={index2} className="py-2 text-center align-middle">
-                {col.render
-                  ? col.render(row)
-                  : (row[col.key] as React.ReactNode)}
-              </td>
-            );
-          })}
-        </tr>
-      </tbody>
+      <tr
+        key={index1}
+        className="border-collapse border border-solid border-[#e8e8e8]"
+      >
+        {hasCloseIcon && <td>Close Icon</td>}
+        {columns.map((col, index2) => {
+          return (
+            <td key={index2} className="py-2 text-center align-middle">
+              {col.render ? col.render(row) : (row[col.key] as React.ReactNode)}
+            </td>
+          );
+        })}
+      </tr>
     );
   });
 
-  return <>{rows}</>;
+  return <tbody>{rows}</tbody>;
 };
