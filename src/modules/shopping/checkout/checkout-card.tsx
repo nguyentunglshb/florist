@@ -34,6 +34,25 @@ export const CheckoutCard = () => {
           </div>
         </div>
       </div>
+
+      <div className="w-full flex justify-between py-6 items-center border-b border-solid border-grey.500">
+        <p>Subtotal</p>
+        <div className="text-defaultText opacity-80">
+          <p>$100.00</p>
+        </div>
+      </div>
+      <div className="w-full flex justify-between py-6 items-center border-b border-solid border-grey.500">
+        <p>Shipping</p>
+        <div className="text-defaultText opacity-80">
+          <p>Free shipping</p>
+        </div>
+      </div>
+      <div className="w-full flex justify-between py-6 items-center border-b border-solid border-grey.500">
+        <p>Total</p>
+        <div className="text-defaultText font-black text-2xl">
+          <p>$100.00</p>
+        </div>
+      </div>
       <div className="w-full p-4 border border-solid border-grey.200">
         <p className="text-defaultText opacity-80 leading-5">
           Please send a check to Store Name, Store Street, Store Town, Store
