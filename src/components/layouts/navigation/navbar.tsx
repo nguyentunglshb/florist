@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { IconCart, IconHeart, IconProfile } from "@/assets";
+import { IconCart, IconHeart, IconProfile, IconSearch } from "@/assets";
 import { NavigationPath } from "@/models";
 import { AuthModal } from "@/modules";
 import { getStoredAuth } from "@/helpers";
@@ -58,6 +58,14 @@ export const Navbar = () => {
           }
         />
       )}
+      <Link
+        to={NavigationPath.SEARCH}
+        className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center"
+      >
+        <div className="hover:-translate-y-1 transition-all">
+          <IconSearch />
+        </div>
+      </Link>
     </div>
   );
 };

@@ -10,4 +10,6 @@ export enum NavigationPath {
   ORDER_TRACKING = "/order-tracking",
   CHECK_OUT = "/checkout",
   WISHLIST = "/wish-list",
+  SEARCH = "/search",
+  SEARCH_RESULT = "/search/:searchTerm",
 }
