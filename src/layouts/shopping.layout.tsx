@@ -1,10 +1,10 @@
-import { bgShopping } from "@/assets";
+import { bgReceiveNotification } from "@/assets";
 import { Outlet } from "react-router-dom";
 
 export const ShoppingLayout = () => {
   return (
     <div>
-      <img src={bgShopping} alt="" />
+      <img src={bgReceiveNotification} alt="" />
       <Outlet />
     </div>
   );
