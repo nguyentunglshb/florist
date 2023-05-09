@@ -1,9 +1,7 @@
+import { useState } from "react";
 import Slider from "react-slick";
 
 import type { Settings } from "react-slick";
-
-import { flower } from "@/assets";
-import { useState } from "react";
 
 const images = [
   "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg",
