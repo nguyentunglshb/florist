@@ -11,6 +11,10 @@ import { TopBlogs } from "./top-blogs";
 export const Home = () => {
   return (
     <div className="w-full">
+      <div className="w-full text-center py-2.5 bg-[#e0f5f0] font-semibold">
+        {" "}
+        Find Your Plant Match 🌱
+      </div>
       <div className="w-full relative">
         <img src={bg1} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

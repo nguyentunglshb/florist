@@ -7,3 +7,5 @@ export * from "./shopping";
 export * from "./auth";
 
 export * from "./search";
+
+export * from "./profile";
