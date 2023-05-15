@@ -12,7 +12,7 @@ const headerPersonalMenu: HeaderItem[] = [
   },
   {
     label: <IconProfile />,
-    path: NavigationPath.PERSONAL,
+    path: NavigationPath.PROFILE,
   },
   {
     label: <IconCart />,

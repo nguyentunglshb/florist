@@ -1,5 +1,4 @@
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
 
 import axiosClient from "@/libs/axios/axios-client";
 import { setLocalStorage } from "@/helpers";
@@ -21,8 +20,6 @@ const loginRequest = (body: LoginBody): Promise<Response> =>
   axiosClient.post("/auth/login", body);
 
 export const useMutationLogin = () => {
-  const navigate = useNavigate();
-
   return useMutation({
     mutationFn: loginRequest,
     mutationKey: "login",

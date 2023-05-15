@@ -1,6 +1,6 @@
 type ButtonProps = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   type?: "button" | "submit";
   onClick?: () => void;
 };
