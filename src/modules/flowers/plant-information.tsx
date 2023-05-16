@@ -3,14 +3,10 @@ import Slider from "react-slick";
 
 import type { Settings } from "react-slick";
 
-const images = [
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg",
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-9-600x713.jpg",
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/16-1-600x713.jpg",
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg",
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-9-600x713.jpg",
-  "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/16-1-600x713.jpg",
-];
+type PlantInforProps = {
+  imageUrls: string[];
+  headImageUrl: string;
+};
 
 const settings: Settings = {
   slidesToShow: 4,
@@ -20,19 +16,20 @@ const settings: Settings = {
   // verticalSwiping: true,
 };
 
-export const PlantInformation = () => {
+export const PlantInformation = (props: PlantInforProps) => {
+  const { headImageUrl, imageUrls } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <div className="w-full">
       <img
-        src={images[selectedIndex]}
+        src={imageUrls[selectedIndex]}
         className="w-full aspect-[8/9] object-cover"
         alt=""
       />
       <div className="pt-6">
         <Slider {...settings}>
-          {images.map((image, index) => (
+          {imageUrls.map((image, index) => (
             <div
               key={index}
               className={`w-1/4 aspect-square p-0.5  focus-visible:outline-none ${
@@ -45,12 +42,6 @@ export const PlantInformation = () => {
           ))}
         </Slider>
       </div>
-      <p className="text-xl font-semibold text-primaryDark py-4">
-        Echinocatus Grusonii
-      </p>
-      <p className="text-defaultText opacity-60 py-2">
-        This minicatus type Echinocatus grusonii looks like a barrel
-      </p>
     </div>
   );
 };

@@ -1,8 +1,12 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
-export const InputNumber = () => {
-  const [count, setCount] = useState(0);
-
+export const InputNumber = ({
+  count = 0,
+  setCount,
+}: {
+  count: number;
+  setCount: (value: string | number) => void;
+}) => {
   const onInputNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     if (Number(value) <= 0) setCount(0);
@@ -13,7 +17,7 @@ export const InputNumber = () => {
     <div className="flex h-10 w-fit border-2 border-solid border-primary">
       <button
         className="h-full aspect-square text-primary font-black"
-        onClick={() => setCount((prev) => (prev <= 0 ? 0 : prev - 1))}
+        onClick={() => setCount(count <= 0 ? 0 : count - 1)}
       >
         -
       </button>
@@ -25,7 +29,7 @@ export const InputNumber = () => {
       />
       <button
         className="h-full aspect-square text-primary font-black"
-        onClick={() => setCount((prev) => prev + 1)}
+        onClick={() => setCount(count + 1)}
       >
         +
       </button>

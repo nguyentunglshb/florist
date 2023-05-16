@@ -19,7 +19,7 @@ type LoginBody = {
 const loginRequest = (body: LoginBody): Promise<Response> =>
   axiosClient.post("/auth/login", body);
 
-export const useMutationLogin = () => {
+export const useMutationLogin = ({ onSuccess }: { onSuccess: () => void }) => {
   return useMutation({
     mutationFn: loginRequest,
     mutationKey: "login",
@@ -27,6 +27,7 @@ export const useMutationLogin = () => {
       setLocalStorage("access_token", data.access_token);
       setLocalStorage("avatarUrl", data.user.avatarUrl);
       setLocalStorage("username", data.user.username);
+      onSuccess();
     },
   });
 };

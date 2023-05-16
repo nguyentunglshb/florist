@@ -11,3 +11,5 @@ export * from "./icon";
 export * from "./lazy-image";
 
 export * from "./input-number";
+
+export * from "./tiny-flower-card";
