@@ -32,6 +32,7 @@ export default {
       },
       boxShadow: {
         present: "10px 10px 20px rgba(0, 0, 0, 0.02)",
+        hover: "10px 10px 20px rgba(0, 0, 0, 0.1)",
       },
       backgroundImage: {
         "linear-rectangle":
