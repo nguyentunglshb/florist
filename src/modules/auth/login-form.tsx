@@ -3,9 +3,15 @@ import { useMutationLogin } from ".";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
 
-export const LoginForm = ({ toggleDialog }: { toggleDialog: () => void }) => {
+export const LoginForm = ({
+  toggleDialog,
+  onSuccess,
+}: {
+  toggleDialog: () => void;
+  onSuccess: () => void;
+}) => {
   const afterLogin = () => {
-    console.log(1);
+    onSuccess();
   };
 
   const mutationLogin = useMutationLogin({ onSuccess: afterLogin });

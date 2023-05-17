@@ -2,23 +2,22 @@ import { Table } from "@/components";
 
 import type { ColumnDefineType } from "@/components/widgets/table/models";
 import { CartTotal } from "./cart-total";
+import { useQueryGetCart } from "./apis";
+import { CartItem, NavigationPath } from "@/models";
+import { Link } from "react-router-dom";
 
-type Data = {
-  product: string;
-  price: string;
-  quantity: number;
-  subtotal: string;
-};
-
-const columns: ColumnDefineType<Data, keyof Data>[] = [
+const columns: ColumnDefineType<CartItem, keyof CartItem>[] = [
   {
-    key: "product",
+    key: "headImageUrl",
     header: "Product",
     width: 200,
-    render: ({ product }) => (
-      <div className="w-[100px] mx-auto">
-        <img className="w-full object-contain mx-auto" src={product} />
-      </div>
+    render: ({ headImageUrl, productId }) => (
+      <Link
+        to={NavigationPath.PLANTERS_DETAIL.replace(":_id", productId)}
+        className="block w-[100px] mx-auto"
+      >
+        <img className="w-full object-contain mx-auto" src={headImageUrl} />
+      </Link>
     ),
   },
   {
@@ -30,29 +29,16 @@ const columns: ColumnDefineType<Data, keyof Data>[] = [
     header: "Quantity",
   },
   {
-    key: "subtotal",
+    key: "subTotalPrice",
     header: "Subtotal",
   },
 ];
 
-const data: Data[] = [
-  {
-    product:
-      "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/10-6-600x713.jpg",
-    price: "$50.00",
-    quantity: 1,
-    subtotal: "$50.00",
-  },
-  {
-    product:
-      "https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg",
-    price: "$50.00",
-    quantity: 1,
-    subtotal: "$50.00",
-  },
-];
-
 export const CartPage = () => {
+  const { data } = useQueryGetCart();
+
+  console.log(data);
+
   return (
     <div className="w-full max-w-screen-lg mx-auto py-32">
       <p className="text-primaryDark font-black text-4xl text-center py-16">
@@ -60,7 +46,10 @@ export const CartPage = () => {
       </p>
       <div className="flex space-x-6">
         <div className="flex-[2_2_0%]">
-          <Table<Data, keyof Data> columns={columns} data={data} />
+          <Table<CartItem, keyof CartItem>
+            columns={columns}
+            data={data?.data?.items || []}
+          />
         </div>
         <CartTotal />
       </div>

@@ -1,4 +1,3 @@
-import { IconCart } from "@/assets";
 import { BillingDetail } from "./billing-detail";
 import { CheckoutCard } from "./checkout-card";
 
@@ -8,7 +7,6 @@ export const CheckoutPage = () => {
       <p className="text-primaryDark font-black text-4xl text-center py-16">
         Checkout
       </p>
-      <IconCart />
       <div className="w-full flex space-x-6">
         <div className="flex-2">
           <BillingDetail />

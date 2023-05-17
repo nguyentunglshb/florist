@@ -1,5 +1,7 @@
 import { IconHeart, IconHeartFilled } from "@/assets";
 import { ButtonDefault } from ".";
+import { Link } from "react-router-dom";
+import { NavigationPath } from "@/models";
 
 export type FlowerCardProps = {
   headImageUrl: string;
@@ -7,6 +9,7 @@ export type FlowerCardProps = {
   name: string;
   originPrice: number;
   currentPrice: number;
+  _id: string;
 };
 
 export const FlowerCard = (props: FlowerCardProps) => {
@@ -16,9 +19,13 @@ export const FlowerCard = (props: FlowerCardProps) => {
     name,
     originPrice,
     currentPrice,
+    _id,
   } = props;
   return (
-    <div className="rounded-[10px] shadow-present border border-solid border-[rgba(0,0,0,0.03)] w-full relative">
+    <Link
+      to={NavigationPath.PLANTERS_DETAIL.replace(":_id", _id)}
+      className="block rounded-[10px] shadow-present border border-solid border-[rgba(0,0,0,0.03)] w-full relative"
+    >
       <div className="absolute w-8 aspect-square rounded-full bg-white top-4 right-4 flex items-center justify-center">
         {isLiked ? <IconHeartFilled /> : <IconHeart />}
       </div>
@@ -43,6 +50,6 @@ export const FlowerCard = (props: FlowerCardProps) => {
           <p className="capitalize font-black text-xs w-max">Buy now</p>
         </ButtonDefault>
       </div>
-    </div>
+    </Link>
   );
 };

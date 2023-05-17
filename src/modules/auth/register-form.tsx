@@ -5,8 +5,10 @@ import { useMutationRegister } from ".";
 
 export const RegisterForm = ({
   toggleDialog,
+  onSuccess,
 }: {
   toggleDialog: () => void;
+  onSuccess: () => void;
 }) => {
   const [isShowPassword, setIsShowPassword] = useState(false);
 
