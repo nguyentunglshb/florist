@@ -1,6 +1,10 @@
 import { ButtonFilled } from "@/components";
+import { NavigationPath } from "@/models";
+import { useNavigate } from "react-router-dom";
 
 export const CartTotal = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex-1">
       <div className="w-full bg-grey.500 p-4 text-primaryDark font-semibold text-xl">
@@ -26,7 +30,10 @@ export const CartTotal = () => {
         </div>
       </div>
       <div className="w-full bg-grey.300 px-4 pb-4">
-        <ButtonFilled className="w-full text-center">
+        <ButtonFilled
+          className="w-full text-center"
+          onClick={() => navigate(NavigationPath.CHECK_OUT)}
+        >
           <p className="w-full text-white uppercase font-black py-2 text-xl">
             Process to checkout
           </p>

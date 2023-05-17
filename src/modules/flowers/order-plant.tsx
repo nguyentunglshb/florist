@@ -9,10 +9,11 @@ type OrderPlantProps = {
   description: string;
   currentPrice: number;
   originPrice: number;
+  headImageUrl: string;
 };
 
 export const OrderPlant = (props: OrderPlantProps) => {
-  const { name, description, currentPrice, originPrice } = props;
+  const { name, description, currentPrice, originPrice, headImageUrl } = props;
 
   const { id } = useParams();
 
@@ -22,10 +23,7 @@ export const OrderPlant = (props: OrderPlantProps) => {
     setCount(+value);
   };
 
-  const mutationAddToCart = useMutationAddToCart({
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    onSuccess: () => {},
-  });
+  const mutationAddToCart = useMutationAddToCart();
 
   return (
     <div className="w-full">
@@ -44,24 +42,27 @@ export const OrderPlant = (props: OrderPlantProps) => {
       <div className="w-full">
         <div className="flex items-center space-x-8 py-8">
           <InputNumber count={count} setCount={setQuantity} />
-          <ButtonDefault className="h-full py-3 flex-1">
+          <ButtonDefault
+            className="h-full py-3 flex-1"
+            onClick={() => {
+              if (count > 0) {
+                mutationAddToCart.mutate({
+                  name,
+                  price: currentPrice,
+                  productId: id as string,
+                  quantity: count,
+                  headImageUrl,
+                });
+              }
+            }}
+          >
             <p>Add to Cart</p>
           </ButtonDefault>
           <button className="border-2 border-solid border-grey.500 h-11 aspect-square flex items-center justify-center rounded-md">
             <IconHeart />
           </button>
         </div>
-        <ButtonFilled
-          className="w-full"
-          onClick={() =>
-            mutationAddToCart.mutate({
-              name,
-              price: currentPrice,
-              productId: id as string,
-              quantity: count,
-            })
-          }
-        >
+        <ButtonFilled className="w-full">
           <p className="text-white w-full text-center py-2">Buy Now</p>
         </ButtonFilled>
       </div>
