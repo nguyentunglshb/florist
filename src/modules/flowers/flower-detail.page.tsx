@@ -25,6 +25,8 @@ export const FlowerDetailPage = () => {
             currentPrice={data?.data?.currentPrice || 0}
             originPrice={data?.data?.originPrice || 0}
             headImageUrl={data?.data?.headImageUrl || ""}
+            views={data?.data?.views || 0}
+            boughts={data?.data?.boughts || 0}
           />
         </div>
       </div>

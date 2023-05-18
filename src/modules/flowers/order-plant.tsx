@@ -1,4 +1,4 @@
-import { IconHeart } from "@/assets";
+import { IconCart, IconEyeOn, IconHeart } from "@/assets";
 import { ButtonDefault, ButtonFilled, InputNumber } from "@/components";
 import { useMutationAddToCart } from ".";
 import { useState } from "react";
@@ -10,10 +10,20 @@ type OrderPlantProps = {
   currentPrice: number;
   originPrice: number;
   headImageUrl: string;
+  views: number;
+  boughts: number;
 };
 
 export const OrderPlant = (props: OrderPlantProps) => {
-  const { name, description, currentPrice, originPrice, headImageUrl } = props;
+  const {
+    name,
+    description,
+    currentPrice,
+    originPrice,
+    headImageUrl,
+    views,
+    boughts,
+  } = props;
 
   const { id } = useParams();
 
@@ -28,6 +38,16 @@ export const OrderPlant = (props: OrderPlantProps) => {
   return (
     <div className="w-full">
       <p className="text-primaryDark font-bold text-3xl">{name}</p>
+      <div className="flex pt-4 space-x-8">
+        <div className="flex space-x-2 items-center">
+          <IconEyeOn />
+          <p className="font-bold text-lg text-primary">{views}</p>
+        </div>
+        <div className="flex space-x-2 items-center">
+          <IconCart />
+          <p className="font-bold text-lg text-primary">{boughts}</p>
+        </div>
+      </div>
       <div className="flex py-4 border-b-2 border-solid border-grey.500">
         <p className="text-3xl font-semibold text-defaultText line-through opacity-40">
           $ {originPrice}

@@ -1,3 +1,5 @@
+import { useSearchParams } from "react-router-dom";
+
 import { bg1 } from "@/assets";
 import { ButtonFilled, ButtonWhiteDefault, IconsName } from "@/components";
 import { Present } from "./present";
@@ -7,10 +9,19 @@ import { Gallery } from "./gallery";
 import { Review } from "./review";
 import { ReceiveNotification } from "./receive-notification";
 import { TopBlogs } from "./top-blogs";
+import { PaymentNotiModal } from "./payment-noti-modal";
 
 export const Home = () => {
+  const [searchParams] = useSearchParams();
+
+  console.log(
+    searchParams.get("vnp_Amount"),
+    searchParams.get("vnp_ResponseCode") === "00"
+  );
+
   return (
     <div className="w-full">
+      <PaymentNotiModal />
       <div className="w-full text-center py-2.5 bg-[#e0f5f0] font-semibold">
         {" "}
         Find Your Plant Match 🌱
