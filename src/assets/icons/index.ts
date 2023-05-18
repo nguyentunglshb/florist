@@ -47,3 +47,7 @@ export * from "./icon-eye-off";
 export * from "./icon-eye-on";
 
 export * from "./icon-search";
+
+export * from "./icon-order-success";
+
+export * from "./icon-order-fail";

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 import { IconSearch, bgSearch } from "@/assets";
 import { NavigationPath } from "@/models";
-import { useQuerySearch } from "./apis";
+import { useMutationUploadImage, useQuerySearch } from "./apis";
 import { useDebounce } from "@/hooks";
-import { TinyFlowerCard } from "@/components";
-import ReactLoading from "react-loading";
+import { DropUpload, TinyFlowerCard } from "@/components";
 
 const tagNames = ["catus", "rosered", "roseblue"];
 
@@ -15,9 +15,17 @@ export const SearchPage = () => {
 
   const debounceSearchTerm = useDebounce(searchTerm);
 
+  const mutationUploadImage = useMutationUploadImage();
+
   const { data, isLoading } = useQuerySearch(debounceSearchTerm);
 
-  console.log(data, isLoading);
+  const onDrop = (files: File[]) => {
+    const fd = new FormData();
+    for (const file of files) {
+      fd.append("file", file);
+    }
+    mutationUploadImage.mutate(fd);
+  };
 
   return (
     <div className="w-full">
@@ -35,6 +43,7 @@ export const SearchPage = () => {
               <IconSearch />
             </div>
           </div>
+          <DropUpload onDrop={onDrop} multiple={false} preview />
           <p className="text-primaryDark font-semibold text-lg pt-4">
             Top search:{" "}
           </p>
