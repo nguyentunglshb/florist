@@ -14,6 +14,11 @@ export const getAvatar = <T>(): T | undefined => {
   return avatarUrl ? (JSON.parse(avatarUrl) as T) : undefined;
 };
 
+export const getUsername = () => {
+  const username = localStorage.getItem("username");
+  return username ? JSON.parse(username) : null;
+};
+
 export const clearStoredAuth = () => {
   if (!isClient) return;
 

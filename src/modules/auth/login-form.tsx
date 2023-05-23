@@ -14,7 +14,7 @@ export const LoginForm = ({
     onSuccess();
   };
 
-  const mutationLogin = useMutationLogin({ onSuccess: afterLogin });
+  const mutationLogin = useMutationLogin();
 
   const [isShowPassword, setIsShowPassword] = useState(false);
 

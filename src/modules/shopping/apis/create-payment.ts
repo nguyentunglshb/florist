@@ -5,6 +5,11 @@ const createPaymentFn = (body: {
   amount: string;
   bankCode: string;
   language: string;
+  fullName?: string;
+  address?: string;
+  city?: string;
+  phone?: string;
+  email?: string;
 }) => axiosClient.post("/order/create-payment", body);
 
 export const useMutationCreatePayment = () => {

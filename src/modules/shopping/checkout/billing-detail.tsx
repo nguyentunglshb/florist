@@ -1,6 +1,6 @@
 export const BillingDetail = () => {
   return (
-    <div className="w-full">
+    <form className="block w-full">
       <p className="font-semibold text-primary text-2xl">Billing detail</p>
       <div className="w-full py-4">
         <p className="font-medium text-defaultText pb-4">
@@ -56,6 +56,6 @@ export const BillingDetail = () => {
           className="w-full border-b-2 focus-visible:outline-none border-solid border-grey.500 h-8"
         />
       </div>
-    </div>
+    </form>
   );
 };
