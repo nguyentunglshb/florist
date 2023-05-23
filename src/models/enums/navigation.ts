@@ -13,4 +13,6 @@ export enum NavigationPath {
   WISHLIST = "/wish-list",
   SEARCH = "/search",
   SEARCH_RESULT = "/search/:searchTerm",
+
+  LOGIN = "/login",
 }

@@ -63,7 +63,9 @@ export const CheckoutCard = () => {
           className="w-full text-center"
           onClick={() =>
             mutationCreatePayment.mutate({
-              amount: `${(data && data?.data?.totalPrice * 2340) || 0}`,
+              amount: `${((data && data?.data?.totalPrice * 2340) || 0).toFixed(
+                0
+              )}`,
               bankCode: "",
               language: "",
             })

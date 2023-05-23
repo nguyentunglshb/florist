@@ -2,13 +2,10 @@ import { Link } from "react-router-dom";
 
 import { IconCart, IconHeart, IconProfile, IconSearch } from "@/assets";
 import { NavigationPath } from "@/models";
-import { AuthModal } from "@/modules";
 import { getStoredAuth } from "@/helpers";
-import { useForceRerender } from "@/hooks";
 
 export const Navbar = () => {
   const accessToken = getStoredAuth();
-  const { forceRerender } = useForceRerender();
 
   return (
     <div className="fixed left-0 top-1/3 p-2 z-50 flex flex-col space-y-2">
@@ -40,28 +37,40 @@ export const Navbar = () => {
           </Link>
         </>
       ) : (
-        <AuthModal
-          forceRerender={() => forceRerender}
-          trigger={
-            <div>
-              <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
-                <div className="hover:-translate-y-1 transition-all">
-                  <IconProfile />
-                </div>
-              </div>
-              <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
-                <div className="hover:-translate-y-1 transition-all">
-                  <IconCart />
-                </div>
-              </div>
-              <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
-                <div className="hover:-translate-y-1 transition-all">
-                  <IconHeart />
-                </div>
+        <>
+          {/* <div>
+            <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
+              <div className="hover:-translate-y-1 transition-all">
+                <IconProfile />
               </div>
             </div>
-          }
-        />
+            <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
+              <div className="hover:-translate-y-1 transition-all">
+                <IconCart />
+              </div>
+            </div>
+            <div className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer mt-2">
+              <div className="hover:-translate-y-1 transition-all">
+                <IconHeart />
+              </div>
+            </div>
+          </div>
+
+          <Link
+            to={NavigationPath.SEARCH}
+            className="rounded-full p-2 bg-[rgba(255,255,255,0.2)] flex items-center justify-center"
+          >
+            <div className="hover:-translate-y-1 transition-all">
+              <IconSearch />
+            </div>
+          </Link> */}
+          <Link
+            to={NavigationPath.LOGIN}
+            className="block p-4 rounded-xl bg-primary text-white font-medium"
+          >
+            <p>Sign in or Create an account now?</p>
+          </Link>
+        </>
       )}
       <Link
         to={NavigationPath.SEARCH}

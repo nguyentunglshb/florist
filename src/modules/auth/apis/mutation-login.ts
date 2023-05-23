@@ -2,6 +2,8 @@ import { useMutation } from "react-query";
 
 import axiosClient from "@/libs/axios/axios-client";
 import { setLocalStorage } from "@/helpers";
+import { useNavigate } from "react-router-dom";
+import { NavigationPath } from "@/models";
 
 type Response = {
   access_token: string;
@@ -19,7 +21,9 @@ type LoginBody = {
 const loginRequest = (body: LoginBody): Promise<Response> =>
   axiosClient.post("/auth/login", body);
 
-export const useMutationLogin = ({ onSuccess }: { onSuccess: () => void }) => {
+export const useMutationLogin = () => {
+  const navigate = useNavigate();
+
   return useMutation({
     mutationFn: loginRequest,
     mutationKey: "login",
@@ -27,7 +31,9 @@ export const useMutationLogin = ({ onSuccess }: { onSuccess: () => void }) => {
       setLocalStorage("access_token", data.access_token);
       setLocalStorage("avatarUrl", data.user.avatarUrl);
       setLocalStorage("username", data.user.username);
-      onSuccess();
+      navigate(NavigationPath.HOME);
+      location.reload();
+      // onSuccess();
     },
   });
 };
